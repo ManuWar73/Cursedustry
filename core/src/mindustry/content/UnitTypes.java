@@ -102,7 +102,7 @@ public class UnitTypes{
             hitSize = 8f;
             health = 150;
             weapons.add(new Weapon("large-weapon"){{
-                reload = 13f;
+                reload = 1f;
                 x = 4f;
                 y = 2f;
                 top = false;
@@ -121,8 +121,6 @@ public class UnitTypes{
             health = 550;
             armor = 4f;
             ammoType = new ItemAmmoType(Items.coal);
-
-            immunities.add(StatusEffects.burning);
 
             weapons.add(new Weapon("flamethrower"){{
                 top = false;
@@ -152,6 +150,7 @@ public class UnitTypes{
         fortress = new UnitType("fortress"){{
             speed = 0.43f;
             hitSize = 13f;
+            canBoost = true;
             rotateSpeed = 3f;
             targetAir = false;
             health = 900;
@@ -163,7 +162,7 @@ public class UnitTypes{
                 top = false;
                 y = 1f;
                 x = 9f;
-                reload = 60f;
+                reload = 20f;
                 recoil = 4f;
                 shake = 2f;
                 ejectEffect = Fx.casing2;
@@ -187,8 +186,8 @@ public class UnitTypes{
             speed = 0.36f;
             hitSize = 22f;
             rotateSpeed = 2.1f;
-            health = 9000;
-            armor = 10f;
+            health = 90;
+            armor = 10000f;
             mechFrontSway = 1f;
             ammoType = new ItemAmmoType(Items.thorium);
 
@@ -256,6 +255,7 @@ public class UnitTypes{
             hitSize = 26f;
             rotateSpeed = 1.65f;
             health = 24000;
+            flying = true;
             armor = 18f;
             mechStepParticles = true;
             stepShake = 0.75f;
@@ -277,6 +277,23 @@ public class UnitTypes{
                 shootSound = Sounds.bang;
 
                 bullet = new BasicBulletType(13f, 80){{
+                    pierce = true;
+                    pierceCap = 10;
+                    width = 14f;
+                    height = 33f;
+                    lifetime = 15f;
+                    shootEffect = Fx.shootBig;
+                    fragVelocityMin = 0.4f;
+
+                    hitEffect = Fx.blastExplosion;
+                    splashDamage = 18f;
+                    splashDamageRadius = 13f;
+
+                    fragBullets = 5;
+                    fragLifeMin = 0f;
+                    fragRandomSpread = 30f;
+
+                    fragBullet =  new BasicBulletType(13f, 80){{
                     pierce = true;
                     pierceCap = 10;
                     width = 14f;
@@ -615,7 +632,7 @@ public class UnitTypes{
 
             weapons.add(new Weapon(){{
                 shootOnDeath = true;
-                reload = 24f;
+                reload = 10f;
                 shootCone = 180f;
                 ejectEffect = Fx.none;
                 shootSound = Sounds.explosion;
@@ -632,7 +649,6 @@ public class UnitTypes{
                     splashDamageRadius = 55f;
                     instantDisappear = true;
                     splashDamage = 90f;
-                    killShooter = true;
                     hittable = false;
                     collidesAir = true;
                 }};
