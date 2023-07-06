@@ -323,7 +323,7 @@ public class UnitTypes{
                         splashDamageRadius = 10f;
                     }};
                 }};
-            }}
+            }};
         }};
             );
 
