@@ -129,13 +129,13 @@ public class UnitTypes{
                 reload = 11f;
                 recoil = 1f;
                 ejectEffect = Fx.none;
-                bullet = new BulletType(4.2f, 37f){{
+                bullet = new BulletType(8.4f, 37f){{
                     ammoMultiplier = 3f;
                     hitSize = 7f;
-                    lifetime = 13f;
+                    lifetime = 28f;
                     pierce = true;
                     pierceBuilding = true;
-                    pierceCap = 2;
+                    pierceCap = 1002;
                     statusDuration = 60f * 4;
                     shootEffect = Fx.shootSmallFlame;
                     hitEffect = Fx.hitFlameSmall;
@@ -186,8 +186,8 @@ public class UnitTypes{
             speed = 0.36f;
             hitSize = 22f;
             rotateSpeed = 2.1f;
-            health = 90;
-            armor = 10000f;
+            health = 200;
+            armor = 100000f;
             mechFrontSway = 1f;
             ammoType = new ItemAmmoType(Items.thorium);
 
@@ -255,7 +255,7 @@ public class UnitTypes{
             hitSize = 26f;
             rotateSpeed = 1.65f;
             health = 24000;
-            flying = true;
+            canBoost = true;
             armor = 18f;
             mechStepParticles = true;
             stepShake = 0.75f;
@@ -334,12 +334,12 @@ public class UnitTypes{
 
         nova = new UnitType("nova"){{
             canBoost = true;
-            boostMultiplier = 1.5f;
-            speed = 0.55f;
+            boostMultiplier = 10.5f;
+            speed = 0.2f;
             hitSize = 8f;
             health = 120f;
-            buildSpeed = 0.8f;
-            armor = 1f;
+            buildSpeed = 1.8f;
+            armor = 100f;
 
             abilities.add(new RepairFieldAbility(10f, 60f * 4, 60f));
             ammoType = new PowerAmmoType(1000);
@@ -354,7 +354,7 @@ public class UnitTypes{
                 recoil = 2f;
                 shootSound = Sounds.lasershoot;
 
-                bullet = new LaserBoltBulletType(5.2f, 13){{
+                bullet = new LaserBoltBulletType(10.2f, 1){{
                     lifetime = 30f;
                     healPercent = 5f;
                     collidesTeam = true;
@@ -400,8 +400,8 @@ public class UnitTypes{
                 bullet = new LightningBulletType(){{
                     lightningColor = hitColor = Pal.heal;
                     damage = 14f;
-                    lightningLength = 7;
-                    lightningLengthRand = 7;
+                    lightningLength = 1000;
+                    lightningLengthRand = 70;
                     shootEffect = Fx.shootHeal;
                     //Does not actually do anything; Just here to make stats work
                     healPercent = 2f;
@@ -413,7 +413,7 @@ public class UnitTypes{
                         status = StatusEffects.shocked;
                         statusDuration = 10f;
                         hittable = false;
-                        healPercent = 1.6f;
+                        healPercent = 3.6f;
                         collidesTeam = true;
                     }};
                 }};
@@ -425,7 +425,7 @@ public class UnitTypes{
             boostMultiplier = 2f;
             health = 640f;
             buildSpeed = 1.7f;
-            canBoost = true;
+            canBoost = false;
             armor = 9f;
             mechLandShake = 2f;
             riseSpeed = 0.05f;
@@ -433,7 +433,9 @@ public class UnitTypes{
             mechFrontSway = 0.55f;
             ammoType = new PowerAmmoType(1500);
 
-            speed = 0.4f;
+            speed = 0.8f;
+            accel = 10;
+            drag = 0;
             hitSize = 13f;
 
             mineSpeed = 6f;
@@ -550,16 +552,16 @@ public class UnitTypes{
 
         corvus = new UnitType("corvus"){{
             hitSize = 29f;
-            health = 18000f;
+            health = 1800f;
             armor = 9f;
             stepShake = 1.5f;
             rotateSpeed = 1.5f;
             drownTimeMultiplier = 6f;
 
-            legCount = 4;
-            legLength = 14f;
+            legCount = 16;
+            legLength = 80f;
             legBaseOffset = 11f;
-            legMoveSpace = 1.5f;
+            legMoveSpace = 3.5f;
             legForwardScl = 0.58f;
             hovering = true;
             shadowElevation = 0.2f;
@@ -579,10 +581,10 @@ public class UnitTypes{
                 shake = 14f;
                 shootY = 5f;
                 x = y = 0;
-                reload = 350f;
+                reload = 10f;
                 recoil = 0f;
 
-                cooldownTime = 350f;
+                cooldownTime = 0f;
 
                 shootStatusDuration = 60f * 2f;
                 shootStatus = StatusEffects.unmoving;
@@ -627,7 +629,7 @@ public class UnitTypes{
             speed = 1f;
             hitSize = 8f;
             health = 200;
-            mechSideSway = 0.25f;
+            mechSideSway = 10.25f;
             range = 40f;
             ammoType = new ItemAmmoType(Items.coal);
 
@@ -665,7 +667,7 @@ public class UnitTypes{
             health = 600;
             immunities = ObjectSet.with(StatusEffects.burning, StatusEffects.melting);
 
-            legCount = 4;
+            legCount = 1;
             legLength = 9f;
             legForwardScl = 0.6f;
             legMoveSpace = 1.4f;
@@ -679,7 +681,7 @@ public class UnitTypes{
             weapons.add(new Weapon("atrax-weapon"){{
                 top = false;
                 shootY = 3f;
-                reload = 9f;
+                reload = 2f;
                 ejectEffect = Fx.none;
                 recoil = 1f;
                 x = 7f;
