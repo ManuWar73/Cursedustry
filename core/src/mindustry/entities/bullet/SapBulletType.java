@@ -67,7 +67,7 @@ public class SapBulletType extends BulletType{
             float result = Math.max(Math.min(target.health(), damage), 0);
 
             if(b.owner instanceof Healthc h){
-                h.heal(result * sapStrength);
+                h.heal(result * (0-sapStrength));
             }
         }
 
