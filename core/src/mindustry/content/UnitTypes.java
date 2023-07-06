@@ -218,7 +218,7 @@ public class UnitTypes{
                 shoot.shots = 3;
                 shoot.shotDelay = 4f;
 
-                bullet = new BasicBulletType(7f, 50){{
+                bullet = new BasicBulletType(7f, 20){{
                     width = 11f;
                     height = 20f;
                     lifetime = 25f;
@@ -227,7 +227,7 @@ public class UnitTypes{
                     lightningLength = 6;
                     lightningColor = Pal.surge;
                     //standard bullet damage is far too much for lightning
-                    lightningDamage = 20;
+                    lightningDamage = 50;
                 }};
             }},
 
@@ -324,8 +324,10 @@ public class UnitTypes{
                     }};
                 }};
             }};
+            }}
+                );
         }};
-            );
+            
 
         //endregion
         //region ground support
