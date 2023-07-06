@@ -324,9 +324,8 @@ public class UnitTypes{
                     }};
                 }};
             }}
-
-            );
         }};
+            );
 
         //endregion
         //region ground support
