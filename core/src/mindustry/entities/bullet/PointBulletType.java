@@ -14,7 +14,7 @@ public class PointBulletType extends BulletType{
 
      public PointBulletType(){
          scaleLife = true;
-         lifetime = 100f;
+         lifetime = 0f;
          collides = false;
          reflectable = false;
          keepVelocity = false;
